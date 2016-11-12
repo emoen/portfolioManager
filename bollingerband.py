@@ -13,6 +13,7 @@ import operator
 
 
 def plot(df_close, ldt_timestamps, ls_symbols, data_mean, mean_pluss_std, mean_minus_std, bollinger_val):
+
     na_price = df_close.values
     plt.clf()
     
