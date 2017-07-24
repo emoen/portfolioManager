@@ -39,11 +39,16 @@ for i, ticker in enumerate(OSEBX):
         PE_ratio = curr_price / eps
         if PE_ratio < 0 : 
             PE_ratio = maxPE + (PE_ratio * (-1))
+        elif PE_ratio < 5 : 
+            PE_ratio = maxPE + PE_ratio
         normal_PE = 1 / PE_ratio
     
         ROIC = -999999
         if json_loaded_summary["quoteSummary"]["result"][0]["financialData"]["returnOnEquity"]:
             ROIC = json_loaded_summary["quoteSummary"]["result"][0]["financialData"]["returnOnEquity"]['raw']
+            
+        if ROIC < 0.25:
+            ROIC = 0.01
         normalROIC = 1 / ROIC
         
         sum_normal = normal_PE + ROIC
