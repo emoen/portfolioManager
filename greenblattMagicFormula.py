@@ -61,7 +61,7 @@ for i, ticker in enumerate(OSEBX):
 #magic_formula = pd.DataFrame(magic_lst, columns=['OSEBX', 'eps', 'curr_price', 'PE', 'ReturnOnCapital', 'normalPE', 'sum_normal', 'magicFormula'])
 magic_formula = pd.DataFrame(magic_lst, columns=['OSEBX', 'ReturnOnCapital', 'normalPE', 'magicFormula'])
 
-print(magic_formula.sort(['magicFormula'], ascending=[False]).to_string(index=False))
+print(magic_formula.sort_values(['magicFormula'], ascending=[False]).to_string(index=False))
 
                         
 
